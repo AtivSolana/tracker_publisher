@@ -1,0 +1,14 @@
+version: "3.8"
+services:
+  tracker:
+    container_name: tracker
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    restart: always
+    volumes:
+      - ./:/app
+    environment:
+      - MINT_ACCOUNT=${MINT_ACCOUNT}
+      - CLUSTER_ENDPOINT=${CLUSTER_ENDPOINT}
+      - MQ_ENDPOINT=${MQ_ENDPOINT}
