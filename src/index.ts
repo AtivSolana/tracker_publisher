@@ -67,7 +67,6 @@ const main = async () => {
       amount: amountDecoder(decoded.amount),
       slot: ctx.slot,
     };
-    console.log(data);
 
     const msg = Buffer.from(serialize(MSG_SCHEMA, new NewMessage(data)));
 
