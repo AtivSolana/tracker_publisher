@@ -41,8 +41,11 @@ const MSG_SCHEMA = new Map([
 const main = async () => {
   const cluster = process.env.CLUSTER_ENDPOINT || "localhost:8899";
   const mintAccount = process.env.MINT_ACCOUNT || "";
-  const mqEndpoint = process.env.MQ_ENDPOINT || "amqp://127.0.0.1";
+  const mqHost = process.env.MQ_HOST || "127.0.0.1";
+  const mqUser = process.env.MQ_USER || "guest";
+  const mqPassword = process.env.MQ_PASSWORD || "";
   const connection = new Connection(cluster);
+  const mqEndpoint = `amqp://${mqUser}:${mqPassword}@${mqHost}`;
 
   console.log(mqEndpoint);
 
