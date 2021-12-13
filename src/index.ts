@@ -89,3 +89,4 @@ const main = async () => {
 };
 
 main();
+console.log("connection ended");
